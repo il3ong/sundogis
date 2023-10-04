@@ -1,0 +1,45 @@
+#map {
+    height: 800px; width: 100%;
+    position: relative;
+}
+
+.ol-control {
+    margin-top : 50px;
+}
+
+#big-map {
+    height: 800px; width: 100%;
+    position: relative;
+}
+
+.menu-show{
+    z-index: 99;
+    position: absolute;
+    background-color: white;
+}
+
+#download-btn {
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+    right: 10px;
+}
+
+.menu-hide {
+    z-index: 100;
+    position: absolute;
+    background-color: white;
+}
+
+.live {
+    z-index: 100;
+    position: absolute;
+    background-color: white;
+    left: 50px;
+}
+/* CSS 스타일을 추가하여 오른쪽 상단에 컨트롤러를 이동 */
+/* .zoom-control {
+    position: absolute;
+    right: 50px; 
+    top: 50px;
+} */
