@@ -1,21 +1,24 @@
-#map {
-    height: 800px; width: 100%;
+body {
+    width: 100%;
+    height: 100%;
     position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#map {
+    height: 920px;
+    position: absolute;
 }
 
 .ol-control {
-    margin-top : 50px;
+    /* margin-top : 50px; */
+    transform: translateY(50px);
 }
 
-#big-map {
-    height: 800px; width: 100%;
-    position: relative;
-}
-
-.menu-show{
-    z-index: 99;
+.menu-show-btn {
+    z-index: 1;
     position: absolute;
-    background-color: white;
 }
 
 #download-btn {
@@ -25,21 +28,102 @@
     right: 10px;
 }
 
-.menu-hide {
-    z-index: 100;
-    position: absolute;
-    background-color: white;
-}
-
 .live {
     z-index: 100;
     position: absolute;
     background-color: white;
     left: 50px;
 }
-/* CSS 스타일을 추가하여 오른쪽 상단에 컨트롤러를 이동 */
-/* .zoom-control {
+
+
+/* offcanvas */
+.info-view{
+    height: 100vh;
+}
+.offcanvas.offcanvas-start {
+    top: 0;
+    left: 0;
+    width: var(--bs-offcanvas-width);
+    border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+    transform: translateX(0%);
+}
+.offcanvas {
     position: absolute;
-    right: 50px; 
-    top: 50px;
-} */
+    bottom: 0;
+    z-index: var(--bs-offcanvas-zindex);
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    color: var(--bs-offcanvas-color);
+    visibility: hidden;
+    background-color: var(--bs-offcanvas-bg);
+    background-clip: padding-box;
+    outline: 0;
+    transition: var(--bs-offcanvas-transition);
+}
+
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
+    --bs-offcanvas-zindex: 1045;
+    --bs-offcanvas-width: 30%;
+    --bs-offcanvas-height: 100vh;
+    --bs-offcanvas-padding-x: 1rem;
+    --bs-offcanvas-padding-y: 1rem;
+    --bs-offcanvas-color: var(--bs-body-color);
+    --bs-offcanvas-bg: var(--bs-body-bg);
+    --bs-offcanvas-border-width: var(--bs-border-width);
+    --bs-offcanvas-border-color: var(--bs-border-color-translucent);
+    --bs-offcanvas-box-shadow: var(--bs-box-shadow-sm);
+    --bs-offcanvas-transition: transform 0.1s ease-in-out;
+    --bs-offcanvas-title-line-height: 1.5;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0;
+}
+
+.offcanvas-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 30vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+/* calendar */
+.datepicker-inline {
+    width: 100%;
+}
+.datepicker table {
+    margin: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 모달창 (데이터추가, 차량추가) */
+.modal-backdrop {
+    --bs-backdrop-zindex: 1;
+    --bs-backdrop-bg: #000;
+    --bs-backdrop-opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-backdrop-zindex);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bs-backdrop-bg);
+}
+
+.modal-backdrop.show {
+    opacity: var(--bs-backdrop-opacity);
+}
